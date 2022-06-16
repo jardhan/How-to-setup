@@ -1,0 +1,9 @@
+sudo apt get update
+sudo apt get install vsftd
+
+// start service
+systemctl status vsftd.service
+sudo systemctl start vsftd.service
+
+// now check it
+ftp://192.168.0.101 <- Your ip address

@@ -1,22 +1,22 @@
 sudo apt get update
 sudo apt get install vsftd
 
-// start service
+# start service
 systemctl status vsftd.service
 sudo systemctl start vsftd.service
 sudo systemctl enable vsftpd
 
 
 
-// Open port on your firewall
+# Open port on your firewall
 sudo ufw allow 20/tcp
 sudo ufw allow 21/tcp
 
-// now check it
+# now check it
 ftp://192.168.0.101 <- Your ip address
 
 
-//Allow authenticated user to upload file, edit the vsftpd.conf
+# Allow authenticated user to upload file, edit the vsftpd.conf
 sudo nano /etc/vsftpd.conf
   ->write_enable=YES
 sudo systemctl restart vsftpd.service

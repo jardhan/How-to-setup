@@ -15,3 +15,5 @@ nameserver 192.168.0.1
 nameserver 8.8.8.8
 
 systemctl restart resolvconf.service
+
+https://www.youtube.com/watch?v=5vU9e7fHG0s&t=404s

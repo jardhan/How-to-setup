@@ -1,19 +1,35 @@
-#Problem
-cat /etc/resolv.conf
+(check to see if resolvconf is installed)
+sudo systemctl status resolvconf.service
 
+(install resolveconf package)
+sudo apt update
 sudo apt install resolvconf
 
-systemctl enable resolvconf.service
-systemctl start resolvconf.service
-systemctl status resolvconf.service
+(confirm resolveconf is running)
+sudo systemctl status resolvconf.service
 
-sudo nano /etc/resolvconf/resolv.conf.d
+(if resolveconf isn't running, enable then start it)
+sudo systemctl enable resolvconf.service
+sudo systemctl start resolvconf.service
 
-#Add nameserver
+(check resolveconf status)
+sudo systemctl status resolvconf.service
 
-nameserver 192.168.0.1
+(edit the head file)
+sudo nano /etc/resolvconf/resolv.conf.d/head
+
+(enter your nameservers below the comments)
 nameserver 8.8.8.8
+nameserver 8.8.4.4
 
-systemctl restart resolvconf.service
+(update resolve.conf file)
+sudo resolvconf --enable-updates
+sudo resolvconf -u
 
-https://www.youtube.com/watch?v=5vU9e7fHG0s&t=404s
+(check if changes we successful)
+sudo nano /etc/resolv.conf
+
+https://www.youtube.com/watch?v=NEyXDdBrw2c&t=1s
+
+
+

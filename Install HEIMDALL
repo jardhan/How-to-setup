@@ -17,3 +17,8 @@ services:
       - 82:80
       - 445:443
     restart: unless-stopped
+
+
+
+App Url
+https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json

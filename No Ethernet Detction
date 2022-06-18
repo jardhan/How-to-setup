@@ -1,0 +1,8 @@
+Pro : Server unable to get ip address
+
+
+sudo iptables -F  #reset my network settings and my network started to work
+
+ sudo dhclient -r 
+ 
+ sudo dhclient   #Now obtain fresh IP address using DHCP
